@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class PrintBinaryDigitsFixed {
     public static void main (String[] args) {
         final int MIN = 0;
@@ -45,12 +47,19 @@ public class PrintBinaryDigitsFixed {
 
     /**
      * Read in a positive integer and return its value
-     * @param the prompt to be shown to the user
+     * @param prompt to be shown to the user
      */
     public static int readInteger(String prompt)     {
-        // Your code goes here.
-        // This method is identical to the readInteger() method
-        // in the InteractiveRectangle project in Part Two of Programming
-        // Practical 9.
+        int integer=0;
+        System.out.println(prompt);
+
+        Scanner scan=new Scanner(System.in);
+
+        while(!scan.hasNextInt()) {
+            scan.next();
+            System.out.println(prompt);
+        }
+        integer=scan.nextInt();
+        return integer;
     }
 }
